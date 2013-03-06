@@ -31,7 +31,7 @@ else
    cd $tmpdir
 fi
 
-jar -xf ../${bak}/${bankFile}
+jar -xf ../${bak}/${bakFile}
 
 for i in $(cat $LISTFILE); do
    if [[ $i =~ "zip" ]]; then
