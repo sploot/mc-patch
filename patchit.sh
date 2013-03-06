@@ -71,11 +71,11 @@ for mod in $(ls $patchdir/mods); do
          echo "Install new mod? [y/N]  "
          read ans
          if [[ $ans == "y" ]] || [[ $ans == "Y" ]]; then
-            cp $mod .
+            cp ${patchdir}/mods/${mod} .
             rm $oldmod
          fi
       else
-         cp $mod .
+         cp ${patchdir}/mods/${mod} .
       fi
    fi
 done
@@ -98,11 +98,11 @@ for mod in $(ls $patchdir/coremods); do
          echo "Install new mod? [y/N]  "
          read ans
          if [[ $ans == "y" ]] || [[ $ans == "Y" ]]; then
-            cp $mod .
+            cp ${patchdir}/coremods/${mod} .
             rm $oldmod
          fi
       else
-         cp $mod .
+         cp ${patchdir}/coremods/${mod} .
       fi
    fi
 done
