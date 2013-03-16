@@ -34,6 +34,20 @@ if [ -f build* ]; then
    fi
 fi
 
+if [ -f forestry* ]; then
+   fm=`ls forestry*`
+   if [[ `echo $bc |grep -c jar$` != 1 ]]; then
+      if [[ $BUILDCRAFT ]]; then
+         mv $bc `echo $fm|sed -e 's/\(.*\.jar\).*/\1/'`
+      fi
+   else
+      if [[ ! $BUILDCRAFT ]]; then
+         mv $fm ${fm}.disabled
+      fi
+   fi
+fi
+
+
 cd ..
 #open /Applications/Minecraft.app
 java -Xms512m -Xmx1024m -cp "bin/*" -Djava.library.path="bin/natives" net.minecraft.client.Minecraft $nick
