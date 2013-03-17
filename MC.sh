@@ -53,7 +53,6 @@ for i in ${BL[@]}; do
             fi
          fi
       else
-         echo else
          if [[ $DISABLE ]]; then
             mv $fn ${fn}.disabled
             if [[ $? != 0 ]]; then
