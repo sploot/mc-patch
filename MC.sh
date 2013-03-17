@@ -1,6 +1,6 @@
 #!/bin/bash
 
-nick="kyle"
+nick=""
 
 IFS="
 "
