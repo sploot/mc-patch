@@ -7,6 +7,7 @@ USAGE() {
 $0 [-b]
 
 -b    Enable buildcraft
+      and forestry mod
 "
 }
 
@@ -21,6 +22,7 @@ while getopts "b" opt; do
 done
 
 cd ~/Library/Application\ Support/minecraft/mods
+
 if [ -f build* ]; then
    bc=`ls buildcraft*`
    if [[ `echo $bc |grep -c jar$` != 1 ]]; then
@@ -36,9 +38,9 @@ fi
 
 if [ -f forestry* ]; then
    fm=`ls forestry*`
-   if [[ `echo $bc |grep -c jar$` != 1 ]]; then
+   if [[ `echo $fm |grep -c jar$` != 1 ]]; then
       if [[ $BUILDCRAFT ]]; then
-         mv $bc `echo $fm|sed -e 's/\(.*\.jar\).*/\1/'`
+         mv $fm `echo $fm|sed -e 's/\(.*\.jar\).*/\1/'`
       fi
    else
       if [[ ! $BUILDCRAFT ]]; then
@@ -46,7 +48,6 @@ if [ -f forestry* ]; then
       fi
    fi
 fi
-
 
 cd ..
 #open /Applications/Minecraft.app
